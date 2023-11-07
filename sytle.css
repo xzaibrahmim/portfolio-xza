@@ -1,0 +1,803 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --text-color: #fff;
+    --bg-color: #1b1f24;
+    --second-bg-color: #22282f;
+    --main-color: #13bbff;
+    --other-color: #c3cad5;
+    --color-icon: #3D8BFF;
+
+    --h1-font: 3.9rem;
+    --h2-font: 2.6rem;
+    --p-font: 1rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 13.7%;
+    background: transparent;
+    transition: all .50s ease;
+}
+
+header.sticky {
+    background: var(--bg-color);
+    box-shadow: 0 .1rem .1rem rgba(0, 0, 0, .2);
+    padding: 16px 14%;
+}
+
+.logo {
+    color: var(--text-color);
+    font-weight: 550;
+    font-size: 22px;
+    font-family: poppins;
+}
+
+a.logo span {
+    color: var(--main-color);
+    font-weight: 550;
+    font-family: poppins;
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    color: var(--other-color);
+    font-weight: 500;
+    font-size: 1rem;
+    margin-left: 30px;
+    transition: all 400ms;
+}
+
+.navlist a:hover {
+    color: var(--main-color);
+    text-shadow: 3px 3px 20px var(--main-color), -1px 2px 30px var(--main-color);
+}
+
+#menu-icon {
+    size: 30px;
+    z-index: 999;
+    cursor: pointer;
+    display: none;
+}
+
+.h-btn {
+    font-family: poppins;
+    display: inline-block;
+    padding: 7px 14px;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 8px;
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 15px;
+    transition: all .50s ease;
+}
+
+.h-btn:hover {
+    color: var(--bg-color);
+    background-color: var(--main-color);
+    box-shadow: 0 0 20px var(--main-color);
+    transform: scale(1.08);
+}
+
+section {
+    padding: 110px 14% 90px;
+}
+
+section.hero{
+    width: 100%;
+}
+
+/* ===== content =====*/
+.hero{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.main-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content h4 {
+    font-size: 1.6rem;
+}
+
+.content h1 {
+    font-size: var(--h1-font);
+    line-height: 3rem;
+    font-weight: 700;
+    font-size: var(--h1-font);
+    line-height: 1.8;
+    margin: 10px 0 10px;
+}
+
+.content span {
+    color: var(--main-color);
+}
+
+.text p {
+    font-size: var(--p-font);
+    color: var(--other-color);
+    line-height: 22px;
+    margin-bottom: 15px;
+    padding: 20px 0 30px 0px;
+    width: auto ;
+    position: relative;
+    top: 60px;
+}
+
+/* ======= gambar-profil ========= */
+
+img.photo {
+    width: 29rem;
+}
+
+.pp{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+/*------------------------------animation wave-------------------------------*/
+.wave-water span {
+    z-index: 0;
+    position: absolute;
+    color: var(--main-color);
+    font-size: 3.3rem;
+    font-weight: 800;
+    max-width: 100%;
+    width: auto;
+}
+
+.wave-water {
+    color: var(--main-color);
+}
+
+.wave-water span:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--main-color);
+}
+
+.wave-water span:nth-child(2) {
+    color: var(--text-color-utama);
+    animation: animate 3s ease-in-out infinite;
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+        clip-Path: polygon(0% 35%, 15% 44%, 32% 50%, 54% 40%, 70% 61%, 84% 59%, 100% 22%, 100% 100%, 0% 100%);
+    }
+
+    50% {
+        clip-Path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+    }
+}
+
+/*------------------------------animation wave-------------------------------*/
+
+/* ====== sosial-media ===== */
+.sosial {
+    margin: 1.2rem 0;
+    top: 0.2rem;
+    position: relative;
+}
+
+.sosial i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--main-color);
+    font-size: 22px;
+    margin-top: 10px;
+    margin-right: 17px;
+    box-shadow: 0 0 20px transparent;
+    backdrop-filter: brightness(88%);
+    cursor: pointer;
+    transition: all .50s ease;
+}
+
+.sosial i:hover {
+    scale: 1.1;
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+/* ====== botton ====== */
+.btn {
+    font-family: poppins;
+    display: inline-block;
+    padding: 11px 26px;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 2px solid var(--main-color);
+    border-radius: 8px;
+    transition: all .50s ease;
+    gap: 1rem;
+}
+
+.btn-2 {
+    font-family: poppins;
+    display: inline-block;
+    padding: 11px 26px;
+    background: transparent;
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 14px;
+    border: 2px solid var(--main-color);
+    margin-left: 6px;
+    border-radius: 8px;
+    transition: all .50s ease;
+    gap: 1rem;
+}
+
+.btn-2:hover {
+    background: transparent;
+    color: var(--main-color);
+    scale: 1.0;
+    box-shadow: 0 0 10px var(--main-color)
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--main-color);
+    scale: 1.0;
+    box-shadow: 0 0 10px var(--main-color)
+}
+
+/* ============ About-style =========== */
+
+.About-content {
+    background-color: var(--second-bg-color);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+/* ==== img-about ==== */
+.about-img img {
+    width: 30rem;
+    margin-bottom: 2rem;
+}
+
+/* ========== about ========== */
+
+.about-text h2 {
+    line-height: 1.0;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.exp-area {
+    margin-top: 20px;
+}
+
+.exp-area p span {
+    font-size: 16px;
+    line-height: 30px;
+    color: var(--other-color);
+    margin-left: 1rem;
+}
+
+.btn-3 {
+    margin-top: 1rem;
+}
+
+/* ================== Services-content ================ */
+.box a.icon i {
+    color: var(--second-bg-color);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-icon);
+}
+
+.box i {
+    color: var(--main-color);
+    font-size: 20px;
+}
+
+.box p {
+    font-size: var(--p-font);
+}
+
+.box {
+    background: #2d343f;
+    padding: 60px 35px 50px;
+    border: 1px solid transparent;
+    border-radius: 28px;
+    box-shadow: 0 0 8px var(--color-icon);
+    transition: all .50s ease;
+    cursor: pointer;
+}
+
+.box:hover {
+    box-shadow: none;
+}
+
+.box a.Download i {
+    color: var(--other-color);
+}
+
+i.bx-right-arrow-alt {
+    position: relative;
+    top: 3px;
+}
+
+.box a i {
+    margin-bottom: 20px;
+}
+
+.box h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.box p {
+    color: var(--other-color);
+    font-weight: 400;
+    font-size: var(--p-font);
+    margin-top: 1rem;
+    line-height: 20px;
+}
+
+.box a.Download {
+    font-family: poppins;
+    display: inline;
+    font-size: 16px;
+    font-weight: 550;
+    color: var(--text-color);
+    margin-top: 10px;
+    line-height: 3rem;
+    text-align: center;
+    border-bottom: 2px solid #5d6c83;
+    transition: all .5s ease;
+}
+
+.box a.Download i.bx-right-arrow-alt {
+    color: var(--color-icon);
+}
+
+
+
+.box a.Download:hover {
+    border-bottom: 2px solid var(--color-icon)
+}
+
+/* ======== BOX ======= */
+
+.center-text {
+    text-align: center;
+}
+
+.center-text h2 {
+    font-size: var(--h2-font);
+}
+
+.Services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    align-items: center;
+    gap: 1.3rem;
+    margin-top: 3rem;
+}
+
+/* ================ Portfolio-content ================= */
+
+#portofolio {
+    background-color: var(--second-bg-color);
+    z-index: 1;
+}
+
+.portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, auto));
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.row img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 2.1rem;
+}
+
+.row {
+    background: var(--bg-color);
+    border-radius: 28px;
+    border: 1px solid var(--main-color);
+    box-shadow: 0 0 5px var(--main-color);
+    padding: 15px;
+    transition: all .50s ease;
+}
+
+.row:hover {
+    scale: 1.02;
+    border: 1px solid var(--bg-color);
+    box-shadow: none;
+}
+
+.main-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5px;
+}
+
+.row i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    background-color: var(--color-icon);
+    border-radius: 50%;
+}
+
+.row h5 {
+    font-size: 18px;
+    color: var(--other-color);
+    font-weight: 600;
+}
+
+.row h4 {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/*=============== CONTACT ME FORM ===============*/
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4.2rem;
+}
+
+.contact-form form {
+    position: relative;
+    width: 600px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    background-color: var(--second-bg-color);
+    box-shadow: 0 0 5px var(--main-color);
+    color: var(--text-color);
+    margin-top: 1.3rem;
+    border-radius: 8px;
+    resize: none;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: var(--other-color);
+    font-size: 15px;
+}
+
+input.send-btn {
+    padding: 7px 14px;
+    border: 2px solid var(--main-color);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all .400s ease;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-size: 12px;
+
+}
+
+input.send-btn:hover {
+    scale: 1.01;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+}
+
+/*=============== CONTACT ME FORM ===============*/
+
+section.footer {
+    padding: 0px 0;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--other-color);
+    font-size: 1rem;
+    color: var(--other-color);
+    background: var(--second-bg-color);
+    padding: 14px;
+    width: 100%;
+}
+
+/* ========== MEDIA QUERY ========== */
+
+@media (max-width:2700px) {
+    header {
+        padding: 20px 6%;
+    }
+
+    header.sticky {
+        padding: 14px 6%;
+    }
+
+    section {
+        padding: 90px 6% 80px;
+    }
+
+    .footer {
+        padding: 18px 6%;
+    }
+
+    .logo {
+        font-size: 36px;
+    }
+
+    .center-text h2 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width:1700px) {
+    header {
+        padding: 20px 8%;
+    }
+
+    header.sticky {
+        padding: 14px 8%;
+    }
+
+    section {
+        padding: 90px 8% 80px;
+    }
+
+    .footer {
+        padding: 18px 8%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .center-text h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width:1380px) {
+    header {
+        padding: 20px 5%;
+    }
+
+    header.sticky {
+        padding: 14px 5%;
+    }
+
+    section {
+        padding: 90px 5% 80px;
+    }
+
+    .footer {
+        padding: 18px 5%;
+    }
+    .text p{
+        width: 80%;
+    }
+}
+
+@media (max-width: 1290px) {
+    .box {
+        padding: 40px 40px 46px;
+    }
+
+    .box i {
+        font-size: 18px;
+    }
+
+    .box h4 {
+        font-size: 1.3rem;
+    }
+
+    .box p {
+        font-size: 0.8rem;
+    }
+  
+}
+
+@media (max-width: 1210px) {
+    section.hero {
+        gap: 2rem;
+    }
+    .wave-water span{
+        font-size: 2.5rem;
+        width: 100%;
+    }
+    .About-content {
+        gap: 2rem;
+        text-align: center;
+        grid-template-columns: 1fr;
+    }
+    :root{
+        --h1-font: 2.9rem;
+        --h2-font: 2rem;
+        --p-font: 0.9rem;
+    }
+    .about-text h2{
+        font-size:1.7rem ;
+    }
+    .text p{
+        font-size: 0.9rem;
+        width: 85%;
+    }
+}
+
+@media (max-width: 970px){
+    :root{
+        --h1-font: 2.3rem;
+    }
+    section.hero{
+        grid-template-columns: 1fr;
+    }
+    .About-content{
+        grid-template-columns: 1fr;
+    }
+    .sosial{
+        margin-top: 1.3rem;
+    }
+    .wave-water span{
+        font-size: 3.4rem;
+        width: 100%;
+    }
+    .text p{
+        font-size: 1rem;
+        width: 65%;
+    }
+    #menu-icon{
+        display: block;
+        font-size: 22px;
+    }
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -80%;
+        width: 255px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: var(--second-bg-color);
+        transition: all .50s ease;
+    }
+    .navlist a{
+        display: block;
+        padding: 17px;
+        font-size: 22px;
+    }
+    .navlist.ac
+    tive{
+        right: 0;
+    }
+}
+
+@media (max-width:590px){
+    .wave-water span{
+        font-size: 2.9rem;
+        width: 100%;
+    }
+    .text p{
+        font-size: 1rem;
+        width: auto;
+    }
+    img.photo{
+        width: 25rem;
+    }
+    .about-img img{
+        width: 25rem;
+    }
+    .about-text h2{
+        font-size: 1.5rem;
+    }
+    .copyright{
+        font-size: 0.7rem;
+    }
+    .h-btn{
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width:490px){
+    .wave-water span{
+        font-size: 2.6rem;
+        width: 100%;
+    }
+    img.photo{
+        width: 22rem;
+    }
+    .about-img img{
+        width: 22rem;
+    }
+    p.exp span{
+        font-size: 0.8rem;
+    }
+    img.photo{
+        width: 22rem;
+    }
+    .center-text h2{
+        font-size: 1.8rem;
+    }
+    .copyright{
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width:430px){
+    .wave-water span{
+        font-size: 2rem;
+        width: 100%;
+    }
+    img.photo{
+        width: 20rem;
+    }
+    .about-img img{
+        width: 20rem;
+    }
+    .text p{
+        font-size: 0.8rem;
+        width: auto;
+    }
+}
